@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Context Diagram</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f0f0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        svg {
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Context Diagram</h1>
+        <svg width="1000" height="600" xmlns="http://www.w3.org/2000/svg">
+            <!-- ระบบกลาง -->
+            <rect x="400" y="250" width="200" height="100" fill="#e3f2fd" stroke="#000" stroke-width="2"/>
+            <text x="500" y="290" text-anchor="middle" font-size="24" font-weight="bold">0</text>
+            <text x="500" y="310" text-anchor="middle" font-size="14">ระบบการขายสินค้า</text>
+            <text x="500" y="330" text-anchor="middle" font-size="14">ออนไลน์</text>
+            
+            <!-- ผู้ดูแลระบบ -->
+            <rect x="50" y="80" width="140" height="100" fill="white" stroke="#000" stroke-width="2"/>
+            <text x="120" y="135" text-anchor="middle" font-size="14" font-weight="bold">ผู้ดูแลระบบ</text>
+            
+            <!-- ผู้ให้บริการบัตรเครดิต -->
+            <rect x="810" y="80" width="140" height="100" fill="white" stroke="#000" stroke-width="2"/>
+            <text x="880" y="125" text-anchor="middle" font-size="14" font-weight="bold">ผู้ให้บริการ</text>
+            <text x="880" y="145" text-anchor="middle" font-size="14" font-weight="bold">บัตรเครดิต</text>
+            
+            <!-- ลูกค้า -->
+            <rect x="50" y="420" width="140" height="100" fill="white" stroke="#000" stroke-width="2"/>
+            <text x="120" y="475" text-anchor="middle" font-size="14" font-weight="bold">ลูกค้า</text>
+            
+            <!-- เส้นและลูกศร จากผู้ดูแลระบบไประบบ -->
+            <line x1="190" y1="100" x2="400" y2="270" stroke="#000" stroke-width="1" marker-end="url(#arrowhead)"/>
+            <text x="250" y="170" font-size="11">ข้อมูลประเภทสินค้า</text>
+            
+            <line x1="190" y1="120" x2="400" y2="280" stroke="#000" stroke-width="1" marker-end="url(#arrowhead)"/>
+            <text x="250" y="190" font-size="11">ข้อมูลสินค้า</text>
+            
+            <line x1="190" y1="140" x2="400" y2="290" stroke="#000" stroke-width="1" marker-end="url(#arrowhead)"/>
+            <text x="250" y="210" font-size="11">ข้อมูลสถานะการสั่งซื้อ</text>
+            
+            <line x1="190" y1="160" x2="400" y2="300" stroke="#000" stroke-width="1" marker-end="url(#arrowhead)"/>
+            <text x="250" y="230" font-size="11">คำขอรายงานการขาย</text>
+            
+            <!-- เส้นและลูกศร จากระบบไปผู้ดูแลระบบ -->
+            <line x1="400" y1="310" x2="190" y2="140" stroke="#000" stroke-width="1" marker-end="url(#arrowhead)"/>
+            <text x="250" y="250" font-size="11">รายงานการขาย</text>
+            
+            <line x1="400" y1="320" x2="190" y2="150" stroke="#000" stroke-width="1" marker-end="url(#arrowhead)"/>
+            <text x="250" y="270" font-size="11">ข้อมูลการสั่งซื้อ</text>
+            
+            <!-- เส้นและลูกศร ระบบกับผู้ให้บริการบัตรเครดิต -->
+            <line x1="600" y1="280" x2="810" y2="120" stroke="#000" stroke-width="1" marker-end="url(#arrowhead)"/>
+            <text x="680" y="190" font-size="11">ข้อมูลการชำระเงินผ่านบัตร</text>
+            
+            <line x1="810" y1="140" x2="600" y2="300" stroke="#000" stroke-width="1" marker-end="url(#arrowhead)"/>
+            <text x="680" y="230" font-size="11">ผลการตรวจสอบการชำระเงิน</text>
+            
+            <!-- เส้นและลูกศร จากลูกค้าไประบบ -->
+            <line x1="190" y1="440" x2="400" y2="340" stroke="#000" stroke-width="1" marker-end="url(#arrowhead)"/>
+            <text x="250" y="380" font-size="11">คำสั่งซื้อ</text>
+            
+            <line x1="190" y1="460" x2="400" y2="345" stroke="#000" stroke-width="1" marker-end="url(#arrowhead)"/>
+            <text x="250" y="400" font-size="11">ข้อมูลการชำระเงิน</text>
+            
+            <line x1="190" y1="480" x2="410" y2="350" stroke="#000" stroke-width="1" marker-end="url(#arrowhead)"/>
+            <text x="250" y="420" font-size="11">ข้อมูลการโอนเงิน</text>
+            
+            <line x1="190" y1="500" x2="420" y2="350" stroke="#000" stroke-width="1" marker-end="url(#arrowhead)"/>
+            <text x="250" y="440" font-size="11">คำขอยกเลิกการสั่งซื้อ</text>
+            
+            <!-- เส้นและลูกศร จากระบบไปลูกค้า -->
+            <line x1="400" y1="340" x2="190" y2="450" stroke="#000" stroke-width="1" marker-end="url(#arrowhead)"/>
+            <text x="250" y="360" font-size="11">รายการสินค้า</text>
+            
+            <line x1="410" y1="345" x2="190" y2="470" stroke="#000" stroke-width="1" marker-end="url(#arrowhead)"/>
+            <text x="260" y="390" font-size="11">สถานะการสั่งซื้อ</text>
+            
+            <line x1="420" y1="350" x2="190" y2="490" stroke="#000" stroke-width="1" marker-end="url(#arrowhead)"/>
+            <text x="270" y="410" font-size="11">ผลการชำระเงิน</text>
+            
+            <!-- Arrow marker definition -->
+            <defs>
+                <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                    <polygon points="0 0, 10 3, 0 6" fill="#000"/>
+                </marker>
+            </defs>
+        </svg>
+    </div>
+</body>
+</html>
